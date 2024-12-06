@@ -48,7 +48,6 @@ def vmdread(file: BufferedReader, count: int, fmt: str) -> str|int|tuple:
     if len(data) == 1:
         if type(data[0]) == bytes:
             return data[0].rstrip(b'\x00').decode("shift-jis", errors="ignore") # str
-            # return data[0].rstrip(b'\x00')
         else:
             return data[0] # int
     else:
