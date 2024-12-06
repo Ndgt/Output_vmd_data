@@ -1,4 +1,7 @@
-from vmd import*
+from vmd import (VMD_HEADER, VMD_MOTION_COUNT, VMD_MOTION, VMD_SKIN_COUNT, VMD_SKIN,
+                 VMD_CAMERA_COUNT, VMD_CAMERA, VMD_LIGHT_COUNT, VMD_LIGHT,
+                 VMD_SELF_SHADOW, VMD_SELF_SHADOW_COUNT,
+                 vmdread, vmdoutput)
 import os
 import argparse
 
@@ -31,8 +34,8 @@ else:
 
         # Motion Data Count
         vmd_motion_count = VMD_MOTION_COUNT(Count=vmdread(file, 4, "I"))
-        vmdoutput(result, "\n--- Motion Count ---")
-        vmdoutput(result, "Motion Count :" + str(vmd_motion_count.Count))
+        vmdoutput(result, "\n--- Motion Data Count ---")
+        vmdoutput(result, "Motion Data Count : " + str(vmd_motion_count.Count))
 
         # Motion Data
         vmdoutput(result, "\n--- Motion Data ---")
@@ -50,12 +53,13 @@ else:
 
             vmdoutput(result, "")
 
-        # Facial Animation Data Count
+        # Skin Data Count
         vmd_skin_count = VMD_SKIN_COUNT(Count=vmdread(file, 4, "I"))
-        vmdoutput(result, "\n--- Skin Count ---")
-        vmdoutput(result, "Skin Count : " + str(vmd_skin_count.Count))
+        vmdoutput(result, "\n--- Skin Data Count ---")
+        vmdoutput(result, "Skin Data Count : " + str(vmd_skin_count.Count))
 
-        # Facial Animation Data
+        # Skin Data
+        vmdoutput(result, "\n--- Skin Data ---")
         for _count in range(vmd_skin_count.Count):
             vmd_skin = VMD_SKIN(
                 SkinName=vmdread(file, 15, "15s"),
@@ -67,3 +71,8 @@ else:
                 # vmdoutput(result, vmd_skin[i]) # output each data
 
             vmdoutput(result, "")
+
+        # Camera Data Count
+        vmd_camera_count = VMD_CAMERA_COUNT(Count=vmdread(file, 4, "I"))
+        vmdoutput(result, "\n--- Camera Data Count ---")
+        vmdoutput(result, "Camera Data Count : " + str(vmd_camera_count.Count))

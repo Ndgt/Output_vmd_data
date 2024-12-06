@@ -24,8 +24,6 @@ VMD_SKIN         = namedtuple("VMD_SKIN",
 VMD_CAMERA_COUNT = namedtuple("VMD_CAMERA_COUNT",
                                 ["Count"])
 
-# uncomment if needed
-'''
 VMD_CAMERA       = namedtuple("VMD_CAMERA",
                                 ["FrameNo", "Length", "Location", "Rotation",
                                  "Interpolation", "ViewingAngle", "Perspective"])
@@ -42,7 +40,6 @@ VMD_SELF_SHADOW_COUNT = namedtuple("VMD_SELF_SHADOW_COUNT",
 VMD_SELF_SHADOW  = namedtuple("VMD_SELF_SHADOW",
                                 ["FrameNo", "Mode", "Distance"])
 
-'''
 
 # function to decode bytes
 def vmdread(file: BufferedReader, count: int, fmt: str) -> str|int|tuple:
