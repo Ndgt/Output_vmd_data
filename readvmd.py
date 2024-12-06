@@ -21,7 +21,8 @@ else:
          open("vmd_data.txt", "w", encoding="utf-8") as result:
         
         # title
-        vmdoutput(result, "vmd file name : " + vmdfilepath)
+        vmdoutput(result, "\n--- VMD file Name ---")
+        vmdoutput(result, vmdfilepath)
         
         # Header
         vmd_header = VMD_HEADER(
@@ -30,6 +31,7 @@ else:
             )
         vmdoutput(result, "\n--- Header ---")
         vmdoutput(result, vmd_header.VmdHeader)
+        vmdoutput(result, "\n--- Model Name ---")
         vmdoutput(result, vmd_header.VmdModelName)
 
         # Motion Data Count
