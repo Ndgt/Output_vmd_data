@@ -1,0 +1,8 @@
+# python generated files
+__pycache__/
+
+# test vmd files
+*vmd
+
+# test result files
+*txt
