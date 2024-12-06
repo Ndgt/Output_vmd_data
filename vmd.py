@@ -56,7 +56,7 @@ def vmdread(file: BufferedReader, count: int, fmt: str) -> str|int|tuple:
 
 # function to write data to output file
 def vmdoutput(outputfile: TextIOWrapper, content: int|str|tuple):
-    if type(content) == tuple:
+    if type(content) == tuple: # if needed to output each field
         result = ""
         for i in range(len(content)):
             result += str(content[i]) + " "    
