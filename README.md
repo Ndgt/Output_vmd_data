@@ -6,8 +6,8 @@ Vocaloid Motion Data (.vmd) ファイルのデータをテキストファイル�
 ### Usage
 `readvmd.py` の引数に、vmd ファイルのパスを指定してください。
 
-```bash:
-readvmd.py <vmd file path>
+```
+python readvmd.py <vmd file path>
 ```
 
 `vmd_data.txt` が同ディレクトリに出力され、そのファイルに vmd 内のデータが書き込まれます。
