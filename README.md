@@ -19,4 +19,4 @@ python readvmd.py <vmd file path>
 
 - 各データは namedtuple に格納しています
 
-    [readvmd.py](readvmd.py) において、モーションデータや表情データの各フィールドのデータを取得したい場合は、`vmdread()` メソッドの第2引数に namedtuple ではなくその要素を渡してください。
+    [readvmd.py](readvmd.py) において、モーションデータや表情データにおける各フィールドのデータを取得したい場合は、`vmdoutput()` メソッドの第2引数に namedtuple ではなくその要素を渡してください。
