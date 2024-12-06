@@ -48,12 +48,13 @@ else:
                 Location=vmdread(file, 12, "3f"),
                 Rotation=vmdread(file, 16, "4f"),
                 Interpolation=vmdread(file, 64, "64B")
-            )            
-            for i in range(len(vmd_motion)):
-                vmdoutput(result, vmd_motion)
-                # vmdoutput(result, vmd_motion[i]) # output each data
-
-            vmdoutput(result, "")
+            )
+            vmdoutput(result, vmd_motion)
+            ''' 
+            # output each data
+            for i in range(len(vmd_motion)):                
+                vmdoutput(result, vmd_motion[i]) 
+            '''
 
         # Skin Data Count
         vmd_skin_count = VMD_SKIN_COUNT(Count=vmdread(file, 4, "I"))
@@ -68,11 +69,12 @@ else:
                 FrameNo=vmdread(file, 4, "I"),
                 Weight=vmdread(file, 4, "f")
             )
-            for i in range(len(vmd_skin)):
-                vmdoutput(result, vmd_skin)
-                # vmdoutput(result, vmd_skin[i]) # output each data
-
-            vmdoutput(result, "")
+            vmdoutput(result, vmd_skin)
+            ''' 
+            # output each data
+            for i in range(len(vmd_skin)):                
+                vmdoutput(result, vmd_skin[i]) 
+            '''
 
         # Camera Data Count
         vmd_camera_count = VMD_CAMERA_COUNT(Count=vmdread(file, 4, "I"))
@@ -91,11 +93,12 @@ else:
                 ViewingAngle=vmdread(file, 4, "I"),
                 Perspective=vmdread(file, 1, "B")
             )
-            for i in range(len(vmd_camera)):
-                vmdoutput(result, vmd_camera)
-                # vmdoutput(result, vmd_camera[i]) # output each data
-
-            vmdoutput(result, "")
+            vmdoutput(result, vmd_camera)
+            ''' 
+            # output each data
+            for i in range(len(vmd_camera)):                
+                vmdoutput(result, vmd_camera[i]) 
+            '''
 
         # Light Data Count
         vmd_light_count = VMD_LIGHT_COUNT(Count=vmdread(file, 4, "I"))
@@ -110,11 +113,12 @@ else:
                 RGB=vmdread(file, 12, "3f"),
                 Location=vmdread(file, 12, "3f"),
             )
-            for i in range(len(vmd_light)):
-                vmdoutput(result, vmd_light)
-                # vmdoutput(result, vmd_light[i]) # output each data
-
-            vmdoutput(result, "")
+            vmdoutput(result, vmd_light)
+            ''' 
+            # output each data
+            for i in range(len(vmd_light)):                
+                vmdoutput(result, vmd_light[i]) 
+            '''
 
         # Self Shadow Data Count
         vmd_self_shadow_count = VMD_SELF_SHADOW_COUNT(Count=vmdread(file, 4, "I"))
@@ -129,8 +133,9 @@ else:
                 Mode=vmdread(file, 1, "B"),
                 Distance=vmdread(file, 4, "f")
             )
-            for i in range(len(vmd_self_shadow)):
-                vmdoutput(result, vmd_self_shadow)
-                # vmdoutput(result, vmd_self_shadow[i]) # output each data
-
-            vmdoutput(result, "")
+            vmdoutput(result, vmd_self_shadow)
+            ''' 
+            # output each data
+            for i in range(len(vmd_self_shadow)):                
+                vmdoutput(result, vmd_self_shadow[i]) 
+            '''
