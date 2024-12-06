@@ -7,7 +7,7 @@ import argparse
 
 # Set up argument parser
 parser = argparse.ArgumentParser()
-parser.add_argument("filepath", help="Path to the input file")
+parser.add_argument("filepath", help="Path to the vmd file")
 args = parser.parse_args()
 
 # Read the VMD
