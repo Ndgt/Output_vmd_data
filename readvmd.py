@@ -1,19 +1,24 @@
 from vmd import*
 import os
+import argparse
+
+# Set up argument parser
+parser = argparse.ArgumentParser()
+parser.add_argument("filepath", help="Path to the input file")
+args = parser.parse_args()
 
 # Read the VMD
-finpath = "test.vmd"
-foutpath = "result.txt"
+vmdfilepath = args.filepath
 
-if not os.path.exists(finpath) or not os.path.exists(foutpath):
+if not os.path.exists(vmdfilepath):
     print("File does not exist")
 
 else:
-    with open(finpath, "rb") as file, \
-         open(foutpath, "w", encoding="utf-8") as result:
+    with open(vmdfilepath, "rb") as file, \
+         open("vmd_data.txt", "w", encoding="utf-8") as result:
         
         # title
-        vmdoutput(result, "vmd file name : " + finpath)
+        vmdoutput(result, "vmd file name : " + vmdfilepath)
         
         # Header
         vmd_header = VMD_HEADER(
@@ -40,8 +45,9 @@ else:
                 Interpolation=vmdread(file, 64, "64B")
             )            
             for i in range(len(vmd_motion)):
-                vmdoutput(result, vmd_motion[i])
-            
+                vmdoutput(result, vmd_motion)
+                # vmdoutput(result, vmd_motion[i]) # output each data
+
             vmdoutput(result, "")
 
         # Facial Animation Data Count
@@ -56,11 +62,8 @@ else:
                 FrameNo=vmdread(file, 4, "I"),
                 Weight=vmdread(file, 4, "f")
             )
+            for i in range(len(vmd_skin)):
+                vmdoutput(result, vmd_skin)
+                # vmdoutput(result, vmd_skin[i]) # output each data
 
-            '''
-            print(
-                vmd_skin.SkinName, " ",
-                vmd_skin.FrameNo, " ",
-                vmd_skin.Weight
-            )
-            '''
+            vmdoutput(result, "")
