@@ -1,5 +1,5 @@
 ## Output VMD data
-Vocaloid Motion Data (.vmd) ファイルのデータをテキストファイルに出力するスクリプト。
+Vocaloid Motion Data (.vmd) ファイルのデータをテキストファイルに出力する Python スクリプト。
 
 <br>
 
@@ -10,7 +10,7 @@ Vocaloid Motion Data (.vmd) ファイルのデータをテキストファイル�
 readvmd.py <vmd file path>
 ```
 
-`result.txt` が同ディレクトリに出力され、そのファイルに vmd 内のデータが書き込まれます。
+`vmd_data.txt` が同ディレクトリに出力され、そのファイルに vmd 内のデータが書き込まれます。
 
 <br>
 
